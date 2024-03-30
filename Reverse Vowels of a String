@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string reverseVowels(string s) {
+        
+        int start =0;
+        int end = s.size()-1;
+        
+        while(start < end){
+            if(!IsVowel(s[start])) start++;
+             if(!IsVowel(s[end])) end--;
+            if(IsVowel(s[start]) && IsVowel(s[end])) 
+                swap(s[start++] , s[end--]);
+        }
+        return s;
+    }
+    bool IsVowel(char x){
+        return x =='a' ||x =='e' ||x =='i' ||x =='o' ||x =='u' ||x =='A' ||x =='E' ||x =='I' ||x =='O' ||x =='U';
+    }
+};
