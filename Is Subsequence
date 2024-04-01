@@ -1,0 +1,36 @@
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        
+        //a null string is always a subsequence
+        
+        if(s.length()==0) return true;
+        
+        //subsequence cannot have larger size then main string
+        
+        if(s.length()>t.length()) return false;
+        
+        //creating a counter and initializing it with 0
+            int j=0;
+        
+        //now we gonna iterate till both of the strings are 0
+        //if an element of string 's' matches with 't'
+        //we gonna add 1 in the counter and move forward in string s
+        
+        for(int i=0;i<t.length()&&j<s.length();i++){
+            if(s[j]==t[i]){
+                j++;
+            }
+        }
+        
+        //now we know subsequence should be of the lenght 's'
+        //so checking if the lenght matches
+        //if it does we return true
+        
+       if(j==s.length()){
+           return true;
+       }
+        //else we return false
+    return false;
+    }
+};
